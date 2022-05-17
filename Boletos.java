@@ -3,150 +3,150 @@ import java.util.Scanner;
 
 public class Boletos {
     //Atributos
-    private int ID;
-    private String Nombre;
-    private double Precio;
-    private int Tipo;
-    private String Fecha;
-    private String Destino;
+    private int iD;
+    private String nombre;
+    private double precio;
+    private int tipo;
+    private String fecha;
+    private String destino;
     
     //Metodos
     //Constructor Vacío
     public Boletos () {
-        this.ID = 0;
-        this.Nombre = "";
-        this.Precio = 0;
-        this.Tipo = 0;
-        this.Fecha = "";
-        this.Destino = "";
+        this.iD = 0;
+        this.nombre = "";
+        this.precio = 0;
+        this.tipo = 0;
+        this.fecha = "";
+        this.destino = "";
     }
     
     //Constructor Parametro
-    public Boletos (int ID, String Nombre, double Precio,int Tipo, String Fecha, String Destino){
-        this.ID = ID;
-        this.Nombre = Nombre;
-        this.Precio = Precio;
-        this.Tipo = Tipo;
-        this.Fecha = Fecha;
-        this.Destino = Destino;
+    public Boletos (int iD, String nombre, double precio,int tipo, String fecha, String destino){
+        this.iD = iD;
+        this.nombre = nombre;
+        this.precio = precio;
+        this.tipo = tipo;
+        this.fecha = fecha;
+        this.destino = destino;
     }
     
     //Constructor Copia
     public Boletos (Boletos Bol){
-        this.ID = Bol.ID;
-        this.Nombre = Bol.Nombre;
-        this.Precio = Bol.Precio;
-        this.Tipo = Bol.Tipo;
-        this.Fecha = Bol.Fecha;
-        this.Destino = Bol.Destino;
+        this.iD = Bol.iD;
+        this.nombre = Bol.nombre;
+        this.precio = Bol.precio;
+        this.tipo = Bol.tipo;
+        this.fecha = Bol.fecha;
+        this.destino = Bol.destino;
     }
 
     /**
      * @return the ID
      */
-    private int getID() {
-        return ID;
+    private int iD() {
+        return iD;
     }
 
     /**
      * @param ID the ID to set
      */
-    private void setID(int ID) {
-        this.ID = ID;
+    private void setiD(int iD) {
+        this.iD = iD;
     }
 
     /**
      * @return the Nombre
      */
-    private String getNombre() {
-        return Nombre;
+    private String getnombre() {
+        return nombre;
     }
 
     /**
      * @param Nombre the Nombre to set
      */
-    private void setNombre(String Nombre) {
-        this.Nombre = Nombre;
+    private void setnombre(String nombre) {
+        this.nombre = nombre;
     }
 
     /**
      * @return the Precio
      */
-    private double getPrecio() {
-        return Precio;
+    private double getprecio() {
+        return precio;
     }
 
     /**
      * @param Precio the Precio to set
      */
-    private void setPrecio(float Precio) {
-        this.Precio = Precio;
+    private void setprecio(float precio) {
+        this.precio = precio;
     }
 
     /**
      * @return the Tipo
      */
-    private int getTipo() {
-        return Tipo;
+    private int gettipo() {
+        return tipo;
     }
 
     /**
      * @param Tipo the Tipo to set
      */
-    private void setTipo(int Tipo) {
-        this.Tipo = Tipo;
+    private void settipo(int tipo) {
+        this.tipo = tipo;
     }
 
     /**
      * @return the Fecha
      */
-    private String getFecha() {
-        return Fecha;
+    private String getfecha() {
+        return fecha;
     }
 
     /**
      * @param Fecha the Fecha to set
      */
-    private void setFecha(String Fecha) {
-        this.Fecha = Fecha;
+    private void setfecha(String fecha) {
+        this.fecha = fecha;
     }
 
     /**
      * @return the Destino
      */
-    private String getDestino() {
-        return Destino;
+    private String getdestino() {
+        return destino;
     }
 
     /**
      * @param Destino the Destino to set
      */
-    private void setDestino(String Destino) {
-        this.Destino = Destino;
+    private void setdestino(String destino) {
+        this.destino = destino;
     }
     
     public void capturarInformacion (){
         Scanner s = new Scanner(System.in);
         System.out.println("Nombre: ");
-        this.Nombre = s.nextLine();
+        this.nombre = s.nextLine();
         System.out.println("Fecha: ");
-        this.Fecha = s.nextLine();
+        this.fecha = s.nextLine();
         System.out.println("Destino: ");
-        this.Destino = s.nextLine();
+        this.destino = s.nextLine();
         System.out.println("Numero de boleto: ");
-        this.ID = s.nextInt();
+        this.iD = s.nextInt();
         System.out.println("Precio: ");
-        this.Precio = s.nextDouble();
+        this.precio = s.nextDouble();
         System.out.println("Tipo de viaje: ");
-        this.Tipo = s.nextInt();
+        this.tipo = s.nextInt();
         
     }
     
     public double obtenerSubtotal (){
         if(this.Tipo == 2){
-             return this.Precio *1.8;
+             return this.precio *1.8;
         }else{
-            return this.Precio;
+            return this.precio;
         }
     }
     
@@ -172,12 +172,12 @@ public class Boletos {
         Scanner s = new Scanner(System.in);
         System.out.println("Edad: ");
         int edad = s.nextInt();
-        System.out.println("Nombre: "+this.Nombre);
-        System.out.println("No. Boleto: "+this.ID);
-        System.out.println("Precio: "+this.Precio);
-        System.out.println("Tipo de viaje: "+this.Tipo);
-        System.out.println("Fecha: "+this.Fecha);
-        System.out.println("Destino: "+this.Destino);
+        System.out.println("Nombre: "+this.nombre);
+        System.out.println("No. Boleto: "+this.iD);
+        System.out.println("Precio: "+this.precio);
+        System.out.println("Tipo de viaje: "+this.tipo);
+        System.out.println("Fecha: "+this.fecha);
+        System.out.println("Destino: "+this.destino);
         System.out.println("Subtotal: "+obtenerSubtotal());
         System.out.println("Impuesto: "+obtenerIVA());
         System.out.println("Descuento: "+obtenerDescuento(edad));
